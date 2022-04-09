@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
-import { FeedItem } from '../feeditem';
+import { FeedItem } from '../../feeditem';
 
 @Component({
   selector: 'app-feed-search',

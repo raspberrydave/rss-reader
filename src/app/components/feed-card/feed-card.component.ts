@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FeedItem } from '../feeditem';
+import { FeedItem } from '../../feeditem';
 
 @Component({
   selector: 'app-feed-card',
