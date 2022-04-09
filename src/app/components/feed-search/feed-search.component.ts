@@ -32,18 +32,7 @@ export class FeedSearchComponent implements OnInit {
       console.log(obj);
       this.feeds = <FeedItem[]>obj['items'];
     });
-
-    /*
-    this.http.get<FeedItem[]>(this.jsonApiUrl).subscribe({
-      next: (feeds) => {
-        this.feeds = feeds;
-      },
-      error: (err) => {
-        console.error('Error', err);
-      }
-    }); */
     
-
   }
 
 }
