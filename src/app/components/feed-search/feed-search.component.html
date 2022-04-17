@@ -5,11 +5,14 @@
     <input [(ngModel)]="feedUrl" class="form-control">
 </div>
 <div class="form-group">
-    <button mat-raised-button color="primary" (click)="fetch()" [disabled]="!feedUrl">Fetch Newsfeed</button>
+    <button mat-raised-button color="secondary" (click)="fetch()" [disabled]="!feedUrl">Fetch Newsfeed</button>
 </div>
-
+<div *ngIf="feedItems.length > 0" class="form-group">
+    <button mat-raised-button color="primary" (click)="fetch()">Save</button>
+</div>
 <hr>
 
-<div *ngFor="let feed of feeds">
-    <app-feed-card [item]="feed"></app-feed-card>
+
+<div *ngFor="let feedItem of feedItems">
+    <app-feeditem-card [item]="feedItem"></app-feeditem-card>
 </div>

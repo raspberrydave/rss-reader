@@ -1,17 +1,1 @@
-<mat-card class="card">
-    <mat-card-header>
-        <mat-card-title>{{item?.title}}</mat-card-title>
-        <mat-card-subtitle *ngIf="item?.author">Von: {{ item?.author }}</mat-card-subtitle>
-        <mat-card-subtitle>Veröffentlicht am: <strong>{{ item?.pubDate | date: "dd.mm.yyy" }}</strong> um <strong>{{ item?.pubDate | date:"HH:mm:ss" }}</strong> Uhr</mat-card-subtitle>
-    </mat-card-header>
-    <hr>
-    <img *ngIf="item?.thumbnail" mat-card-image src="{{ item?.thumbnail }}" alt="">
-    <mat-card-content>
-        <p>{{ item?.description }}</p>
-        <mat-card-actions>
-            <a mat-raised-button href="{{ item?.link }}" target="_blank">READ MORE</a>
-        </mat-card-actions>
-    </mat-card-content>
-    <hr>
-    <p>Kategorie(n): {{ item?.categories?.join(', ') }}</p>
-</mat-card>
+<p>feed-card works!</p>

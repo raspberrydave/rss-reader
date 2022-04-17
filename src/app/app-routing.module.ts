@@ -4,12 +4,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeedSearchComponent } from './components/feed-search/feed-search.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FeedsComponent } from './components/feeds/feeds.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'feed-search',
     pathMatch: 'full'
+  },
+  {
+    path: 'feeds',
+    component: FeedsComponent
   },
   {
     path: 'feed-search',
