@@ -7,12 +7,12 @@
 <div class="form-group">
     <button mat-raised-button color="secondary" (click)="fetch()" [disabled]="!feedUrl">Fetch Newsfeed</button>
 </div>
-<div *ngIf="feedItems.length > 0" class="form-group">
-    <button mat-raised-button color="primary" (click)="fetch()">Save</button>
+<div *ngIf="feed.items.length > 0" class="form-group">
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
 </div>
+
 <hr>
 
-
-<div *ngFor="let feedItem of feedItems">
-    <app-feeditem-card [item]="feedItem"></app-feeditem-card>
+<div *ngFor="let item of feed.items">
+    <app-feeditem-card [item]="item"></app-feeditem-card>
 </div>

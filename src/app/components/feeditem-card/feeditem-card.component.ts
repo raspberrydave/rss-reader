@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { FeedItemInterface } from '../../interfaces/feeditem';
+import { IFeedItem } from '../../interfaces/feeditem';
 
 @Component({
   selector: 'app-feeditem-card',
@@ -9,7 +9,7 @@ import { FeedItemInterface } from '../../interfaces/feeditem';
 
 export class FeeditemCardComponent {
 
-  @Input() item: FeedItemInterface | null = null;
+  @Input() item: IFeedItem | null = null;
   @Input() read = false;
   @Output() readChange = new EventEmitter<boolean>();
 
@@ -24,6 +24,7 @@ export class FeeditemCardComponent {
   }
 
   @HostListener("click") onClick() {
+    console.log('FeedItem-Title: ' + this.item?.title);
   }
 
 }

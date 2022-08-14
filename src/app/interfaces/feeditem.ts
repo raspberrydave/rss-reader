@@ -1,4 +1,4 @@
-export interface FeedItemInterface {
+export interface IFeedItem {
     title: string;
     link: string;
     description: string;

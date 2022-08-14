@@ -9,9 +9,9 @@
     <mat-card-content>
         <p>{{ item?.description }}</p>
         <mat-card-actions>
-            <a mat-raised-button href="{{ item?.link }}" target="_blank">READ MORE</a>
+            <a mat-raised-button href="{{ item?.link }}" target="_blank">Read more</a>
         </mat-card-actions>
     </mat-card-content>
     <hr>
-    <p>Kategorie(n): {{ item?.categories?.join(', ') }}</p>
+    <p>Kategorie(n): <strong>{{ item?.categories?.join(', ') }}</strong></p>
 </mat-card>

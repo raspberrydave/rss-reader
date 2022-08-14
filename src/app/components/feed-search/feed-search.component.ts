@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
-import { FeedInterface } from '../../interfaces/feed';
-import { FeedItemInterface } from '../../interfaces/feeditem';
+import { Feed } from '../../classes/feed';
+import { IFeedItem } from 'src/app/interfaces/feeditem';
+import { FeedService } from '../../services/feed.service';
 
 @Component({
   selector: 'app-feed-search',
@@ -11,16 +12,20 @@ import { FeedItemInterface } from '../../interfaces/feeditem';
 })
 export class FeedSearchComponent implements OnInit {
 
-  public feedItems: Array<FeedItemInterface> = [];
-  public feeds: Array<FeedInterface> = [];
+  //public feed: FeedInterface | null = null;
+  public feed: Feed;
   public feedUrl = 'https://www.spiegel.de/schlagzeilen/tops/index.rss';
-
   private jsonApiUrl = 'https://api.rss2json.com/v1/api.json';
 
-  constructor(private http: HttpClient ) {
+  constructor(private http: HttpClient, private feedService: FeedService ) {
+    this.feed = new Feed('', '', '', '', '', '');
   }
 
   ngOnInit(): void {
+  }
+
+  save(): void {
+    this.feedService.save(this.feed); 
   }
 
   fetch(): void {
@@ -32,9 +37,11 @@ export class FeedSearchComponent implements OnInit {
 
     this.http.get(this.jsonApiUrl, { headers, params, responseType: 'text' }).subscribe(response => {
       let obj = JSON.parse(response);
+
       console.log(obj);
-      this.feedItems = <FeedItemInterface[]>obj['items'];
-      this.feeds = <FeedInterface[]>obj['feed'];
+
+      this.feed = <Feed>obj['feed'];
+      this.feed.items = <IFeedItem[]>obj['items'];
     });
   }
 

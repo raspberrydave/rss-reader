@@ -1,4 +1,4 @@
-export interface FeedInterface {
+export interface IFeed {
     author: string;
     description: string;
     image: string;
