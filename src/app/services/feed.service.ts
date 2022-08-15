@@ -13,7 +13,7 @@ export class FeedService {
   }
 
   save(feed: Feed) {
-    console.log('feed "' + feed.title + '" saved');
+    console.log('Feed "' + feed.title + '" saved');
   }
 
 }
